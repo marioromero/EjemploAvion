@@ -1,10 +1,17 @@
+using System.Drawing.Text;
+
 namespace EjemploAvion
 {
     public partial class Form1 : Form
     {
+        private List<Avion> avionList = new List<Avion>();
+        
+
         public Form1()
         {
             InitializeComponent();
+            InicializarDataGridView();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,21 +43,50 @@ namespace EjemploAvion
 
             objetoAvion2.PrimerVuelo = dateTimePickerPrimerVuelo.Value;
 
-            MessageBox.Show("El modelo del avión es: " + objetoAvion2.Modelo + "\n" +
+            /*MessageBox.Show("El modelo del avión es: " + objetoAvion2.Modelo + "\n" +
                             "El tiempo de servicio del avión es: " + objetoAvion2.TiempoDeServicio + "\n" +
                             "El avión está activo: " + objetoAvion2.EstaActivo + "\n" +
                             "Los años de servicio del avión son: " + objetoAvion2.AniosDeServicio + "\n" +
                             "La cantidad de pasajeros del avión es: " + objetoAvion2.CantidadPasajeros + "\n" +
-                            "El primer vuelo del avión fue: " + objetoAvion2.PrimerVuelo);
+                            "El primer vuelo del avión fue: " + objetoAvion2.PrimerVuelo);*/
 
+
+            avionList.Add(objetoAvion2);     
             
-
-
-
-
-
-                
+            //una vez que tengo un nuevo avion, actualizo el grid
+            ActualizarDataGridView();
 
         }
+
+        //formatear tabla
+        private void InicializarDataGridView()
+        {
+            tablaAviones.Columns.Add("Modelo", "Modelo");
+            tablaAviones.Columns.Add("TiempoDeServicio", "Tiempo de Servicio");
+            tablaAviones.Columns.Add("EstaActivo", "Está activo");
+            tablaAviones.Columns.Add("AniosDeServicio", "Años de servicio");
+            tablaAviones.Columns.Add("CantidadPasajeros", "Cantidad Pasajeros");
+            tablaAviones.Columns.Add("PrimerVuelo", "Primer vuelo");
+
+        }
+
+        //actualizar datos en tabla
+        private void ActualizarDataGridView()
+        {
+            tablaAviones.Rows.Clear();
+
+            foreach (var avion in avionList)
+            {
+                tablaAviones.Rows.Add(avion.Modelo,
+                    avion.TiempoDeServicio,
+                    avion.EstaActivo,
+                    avion.AniosDeServicio,
+                    avion.CantidadPasajeros,
+                    avion.PrimerVuelo.ToShortDateString());
+            }
+        }
+
+
+
     }
 }
