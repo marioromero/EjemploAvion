@@ -68,6 +68,26 @@ namespace EjemploAvion
             tablaAviones.Columns.Add("CantidadPasajeros", "Cantidad Pasajeros");
             tablaAviones.Columns.Add("PrimerVuelo", "Primer vuelo");
 
+            // Añadir columnas de botones editar  
+            DataGridViewButtonColumn editarColumna = new DataGridViewButtonColumn();
+            editarColumna.Name = "Editar";
+            editarColumna.HeaderText = "Editar";
+            editarColumna.Text = "Editar";
+            editarColumna.UseColumnTextForButtonValue = true;
+            tablaAviones.Columns.Add(editarColumna);
+
+            //añadir columnas de botones eliminar
+            DataGridViewButtonColumn eliminarColumna = new DataGridViewButtonColumn();
+            eliminarColumna.Name = "Eliminar";
+            eliminarColumna.HeaderText = "Eliminar";
+            eliminarColumna.Text = "Eliminar";
+            eliminarColumna.UseColumnTextForButtonValue = true;
+            tablaAviones.Columns.Add(eliminarColumna);
+
+
+            //agregar evento a grid para cuando se haga click en cualquier celda (ver método tablaAviones_CellClick para entender que ocurre)
+            tablaAviones.CellClick += tablaAviones_CellClick;
+
         }
 
         //actualizar datos en tabla
@@ -86,7 +106,38 @@ namespace EjemploAvion
             }
         }
 
+        //evento que se dispara cuando se hace click en una celda del grid
+        private void tablaAviones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //si se hace click en una celda que no sea el header...
+            if (e.RowIndex >= 0)
+            {
+                //verifica si la celda pertenece a la columna con nombre "Eliminar"
+                if (tablaAviones.Columns[e.ColumnIndex].Name == "Eliminar")
+                {
+                    //rescata el row index de la fila seleccionada y elimina el avion que corresponde a esa fila
+                    avionList.RemoveAt(e.RowIndex);
+                    //actualiza el grid
+                    ActualizarDataGridView();
+                }
 
+                //verifica si la celda pertenece a la columna con nombre "Editar"
+                else if (tablaAviones.Columns[e.ColumnIndex].Name == "Editar")
+                {
+                    // Código para editar los valores de la fila seleccionada
+                    Avion avion = avionList[e.RowIndex];
 
+                    textBoxModelo.Text = avion.Modelo;
+                    numericUpDownTiempoDeServicio.Value = avion.TiempoDeServicio;
+                    activo.Checked = avion.EstaActivo;
+                    textBoxAniosDeServicio.Text = avion.AniosDeServicio.ToString();
+                    textBoxCantidadPasajeros.Text = avion.CantidadPasajeros.ToString();
+                    dateTimePickerPrimerVuelo.Value = avion.PrimerVuelo;
+
+                    avionList.RemoveAt(e.RowIndex);
+                    ActualizarDataGridView();
+                }
+            }
+        }
     }
 }

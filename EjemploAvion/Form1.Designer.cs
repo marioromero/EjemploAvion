@@ -43,51 +43,52 @@
             dateTimePickerPrimerVuelo = new DateTimePicker();
             button1 = new Button();
             tablaAviones = new DataGridView();
-            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)numericUpDownTiempoDeServicio).BeginInit();
             groupBoxActivo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tablaAviones).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(98, 61);
+            label1.Location = new Point(112, 81);
             label1.Name = "label1";
-            label1.Size = new Size(48, 15);
+            label1.Size = new Size(61, 20);
             label1.TabIndex = 0;
             label1.Text = "Modelo";
             // 
             // textBoxModelo
             // 
-            textBoxModelo.Location = new Point(220, 58);
+            textBoxModelo.Location = new Point(251, 77);
+            textBoxModelo.Margin = new Padding(3, 4, 3, 4);
             textBoxModelo.Name = "textBoxModelo";
-            textBoxModelo.Size = new Size(100, 23);
+            textBoxModelo.Size = new Size(114, 27);
             textBoxModelo.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(98, 102);
+            label2.Location = new Point(112, 136);
             label2.Name = "label2";
-            label2.Size = new Size(106, 15);
+            label2.Size = new Size(135, 20);
             label2.TabIndex = 0;
             label2.Text = "Tiempo de servicio";
             // 
             // numericUpDownTiempoDeServicio
             // 
-            numericUpDownTiempoDeServicio.Location = new Point(220, 100);
+            numericUpDownTiempoDeServicio.Location = new Point(251, 133);
+            numericUpDownTiempoDeServicio.Margin = new Padding(3, 4, 3, 4);
             numericUpDownTiempoDeServicio.Name = "numericUpDownTiempoDeServicio";
-            numericUpDownTiempoDeServicio.Size = new Size(120, 23);
+            numericUpDownTiempoDeServicio.Size = new Size(137, 27);
             numericUpDownTiempoDeServicio.TabIndex = 2;
             // 
             // activo
             // 
             activo.AutoSize = true;
-            activo.Location = new Point(14, 22);
+            activo.Location = new Point(16, 29);
+            activo.Margin = new Padding(3, 4, 3, 4);
             activo.Name = "activo";
-            activo.Size = new Size(34, 19);
+            activo.Size = new Size(42, 24);
             activo.TabIndex = 3;
             activo.TabStop = true;
             activo.Text = "SI";
@@ -96,9 +97,10 @@
             // noActivo
             // 
             noActivo.AutoSize = true;
-            noActivo.Location = new Point(93, 22);
+            noActivo.Location = new Point(106, 29);
+            noActivo.Margin = new Padding(3, 4, 3, 4);
             noActivo.Name = "noActivo";
-            noActivo.Size = new Size(43, 19);
+            noActivo.Size = new Size(52, 24);
             noActivo.TabIndex = 3;
             noActivo.TabStop = true;
             noActivo.Text = "NO";
@@ -108,9 +110,11 @@
             // 
             groupBoxActivo.Controls.Add(activo);
             groupBoxActivo.Controls.Add(noActivo);
-            groupBoxActivo.Location = new Point(98, 142);
+            groupBoxActivo.Location = new Point(112, 189);
+            groupBoxActivo.Margin = new Padding(3, 4, 3, 4);
             groupBoxActivo.Name = "groupBoxActivo";
-            groupBoxActivo.Size = new Size(200, 66);
+            groupBoxActivo.Padding = new Padding(3, 4, 3, 4);
+            groupBoxActivo.Size = new Size(229, 88);
             groupBoxActivo.TabIndex = 5;
             groupBoxActivo.TabStop = false;
             groupBoxActivo.Text = "Está activo";
@@ -118,56 +122,60 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(374, 66);
+            label3.Location = new Point(427, 88);
             label3.Name = "label3";
-            label3.Size = new Size(93, 15);
+            label3.Size = new Size(117, 20);
             label3.TabIndex = 0;
             label3.Text = "Años de servicio";
             // 
             // textBoxAniosDeServicio
             // 
-            textBoxAniosDeServicio.Location = new Point(482, 63);
+            textBoxAniosDeServicio.Location = new Point(551, 84);
+            textBoxAniosDeServicio.Margin = new Padding(3, 4, 3, 4);
             textBoxAniosDeServicio.Name = "textBoxAniosDeServicio";
-            textBoxAniosDeServicio.Size = new Size(53, 23);
+            textBoxAniosDeServicio.Size = new Size(60, 27);
             textBoxAniosDeServicio.TabIndex = 1;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(360, 102);
+            label4.Location = new Point(411, 136);
             label4.Name = "label4";
-            label4.Size = new Size(107, 15);
+            label4.Size = new Size(136, 20);
             label4.TabIndex = 0;
             label4.Text = "Cantidad pasajeros";
             // 
             // textBoxCantidadPasajeros
             // 
-            textBoxCantidadPasajeros.Location = new Point(482, 99);
+            textBoxCantidadPasajeros.Location = new Point(551, 132);
+            textBoxCantidadPasajeros.Margin = new Padding(3, 4, 3, 4);
             textBoxCantidadPasajeros.Name = "textBoxCantidadPasajeros";
-            textBoxCantidadPasajeros.Size = new Size(53, 23);
+            textBoxCantidadPasajeros.Size = new Size(60, 27);
             textBoxCantidadPasajeros.TabIndex = 1;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(329, 166);
+            label5.Location = new Point(376, 221);
             label5.Name = "label5";
-            label5.Size = new Size(72, 15);
+            label5.Size = new Size(90, 20);
             label5.TabIndex = 0;
             label5.Text = "PrimerVuelo";
             // 
             // dateTimePickerPrimerVuelo
             // 
-            dateTimePickerPrimerVuelo.Location = new Point(442, 164);
+            dateTimePickerPrimerVuelo.Location = new Point(505, 219);
+            dateTimePickerPrimerVuelo.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerPrimerVuelo.Name = "dateTimePickerPrimerVuelo";
-            dateTimePickerPrimerVuelo.Size = new Size(160, 23);
+            dateTimePickerPrimerVuelo.Size = new Size(182, 27);
             dateTimePickerPrimerVuelo.TabIndex = 6;
             // 
             // button1
             // 
-            button1.Location = new Point(292, 243);
+            button1.Location = new Point(334, 324);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(86, 31);
             button1.TabIndex = 7;
             button1.Text = "Ingresar";
             button1.UseVisualStyleBackColor = true;
@@ -176,26 +184,19 @@
             // tablaAviones
             // 
             tablaAviones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tablaAviones.Location = new Point(89, 288);
+            tablaAviones.Location = new Point(102, 384);
+            tablaAviones.Margin = new Padding(3, 4, 3, 4);
             tablaAviones.Name = "tablaAviones";
+            tablaAviones.RowHeadersWidth = 51;
             tablaAviones.RowTemplate.Height = 25;
-            tablaAviones.Size = new Size(504, 150);
+            tablaAviones.Size = new Size(576, 200);
             tablaAviones.TabIndex = 8;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(485, 34);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(240, 150);
-            dataGridView1.TabIndex = 9;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(645, 450);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1106, 600);
             Controls.Add(tablaAviones);
             Controls.Add(button1);
             Controls.Add(dateTimePickerPrimerVuelo);
@@ -209,13 +210,13 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)numericUpDownTiempoDeServicio).EndInit();
             groupBoxActivo.ResumeLayout(false);
             groupBoxActivo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tablaAviones).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -237,6 +238,5 @@
         private DateTimePicker dateTimePickerPrimerVuelo;
         private Button button1;
         private DataGridView tablaAviones;
-        private DataGridView dataGridView1;
     }
 }
